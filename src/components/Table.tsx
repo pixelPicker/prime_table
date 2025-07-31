@@ -162,13 +162,18 @@ export const Table = ({
             <Button
               label="Submit"
               icon="pi pi-check"
+              type='submit'
               className="p-button-sm p-button-success bg-sky-100 hover:bg-sky-200 transition-all py-1 px-2 rounded-sm gap-2"
             />
             <Button
               label="Close"
+              type='button'
               icon="pi pi-times"
               className="p-button-sm p-button-secondary bg-sky-100 hover:bg-sky-200 transition-all py-1 px-2 rounded-sm gap-2"
-              onClick={() => opRef.current?.hide()}
+              onClick={(e) => {
+                e.stopPropagation()
+                opRef.current?.hide()
+              }}
             />
           </div>
         </form>
